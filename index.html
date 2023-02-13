@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Embedding an External Website</title>
+    <title>Including External Website Content</title>
   </head>
   <body>
-    <h1>Embedding an External Website</h1>
-    <iframe src="https://fnf.kdata1.com/american-founding-fathers/1/" width="100%" height="500" frameborder="0" allowfullscreen></iframe>
+    <h1>Including External Website Content</h1>
+    <div id="content"></div>
+    <script>
+      fetch('https://fnf.kdata1.com/american-founding-fathers/1/')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('content').innerHTML = data;
+        });
+    </script>
   </body>
 </html>
-
-
